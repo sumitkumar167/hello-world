@@ -1,21 +1,26 @@
 //Program to check whether the number is palindrome
 
-#include<stdio.h>  
-int main()    
-{    
-int n,r,sum=0,temp;    
-printf("enter the number=");    
-scanf("%d",&n);    
-temp=n;    
-while(n>0)    
-{    
-r=n%10;    
-sum=(sum*10)+r;    
-n=n/10;    
-}    
-if(temp==sum)    
-printf("palindrome number ");    // The number is a palindrome
-else    
-printf("not palindrome");        // The number is not a palindrome
-return 0;  
-}   
+int Palindrome(int number){
+  int temp = 0, sum = 0, rem = 0;
+  int flag = 0;
+  temp = number;
+  while(number > 0){
+    rem = number%10;
+    sum = sum*10 + rem;
+    number /= 10;
+    }
+  if(temp==sum)
+    flag = 1;
+  return flag;
+  }
+
+int main() {
+  
+  int isPalindrome;
+  isPalindrome = Palindrome(1234);
+  if(isPalindrome == 1)
+    printf("Its Palindrome");
+  else
+    printf("Better Luck Next Time!!!");
+  return 0;
+}
